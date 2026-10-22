@@ -20,13 +20,11 @@ library(readr)
 ```
 
 ```{r datos, message=FALSE, warning=FALSE}
-# 1. Desactivar la solicitud de inicio de sesión de Google
 gs4_deauth()
 
-# 2. URL del archivo de Google Sheets
-url_csv <- "[https://docs.google.com/spreadsheets/d/1X7WJL14n-qXktNYAePcZcheAx47X64DErarbeebkA-Y/gviz/tq?tqx=out:csv](https://docs.google.com/spreadsheets/d/1X7WJL14n-qXktNYAePcZcheAx47X64DErarbeebkA-Y/gviz/tq?tqx=out:csv)"
+url_sheet <- "https://docs.google.com/spreadsheets/d/1X7WJL14n-qXktNYAePcZcheAx47X64DErarbeebkA-Y/edit?gid=0#gid=0"
 
-df_raw <- read.csv(url_csv, stringsAsFactors = FALSE)
+df_raw <- read_sheet(url_sheet)
 ```
 
 ```{r promedios}
